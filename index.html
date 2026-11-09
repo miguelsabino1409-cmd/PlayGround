@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#11111b" />
+    <title>Whisper Nursery</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2311141d'/%3E%3Ccircle cx='32' cy='22' r='13' fill='%23f4efc9'/%3E%3Crect x='20' y='30' width='24' height='18' rx='6' fill='%2388a7ff'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-shell">
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Whisper Nursery game canvas"></canvas>
+
+      <div id="hud" class="panel">
+        <div class="stat-group">
+          <span class="label">Lives</span>
+          <div id="lives" class="hearts"></div>
+        </div>
+        <div class="stat-group wide">
+          <span class="label">Objective</span>
+          <div id="objective">Wake the moon toy</div>
+        </div>
+        <div class="stat-group">
+          <span class="label">Sequence</span>
+          <div id="sequence">moon → star → heart</div>
+        </div>
+      </div>
+
+      <div id="messageBox" class="panel hidden"></div>
+
+      <div id="touchControls">
+        <div id="movePad" class="pad" aria-label="Movement controls">
+          <button class="dir" data-dir="up">▲</button>
+          <div class="mid-row">
+            <button class="dir" data-dir="left">◀</button>
+            <button class="dir" data-dir="down">▼</button>
+            <button class="dir" data-dir="right">▶</button>
+          </div>
+        </div>
+        <button id="interactBtn" class="action">Interact</button>
+      </div>
+
+      <div id="startOverlay" class="overlay visible">
+        <div class="card">
+          <p class="eyebrow">Horror pet puzzle</p>
+          <h1>Whisper Nursery</h1>
+          <p>
+            A tiny plush monster paces the room. Wake the toys in the right order,
+            keep your distance, and reach the exit before the nursery starts to breathe.
+          </p>
+          <button id="startBtn">Start Game</button>
+        </div>
+      </div>
+
+      <div id="endOverlay" class="overlay hidden">
+        <div class="card">
+          <p class="eyebrow" id="endEyebrow">Mission</p>
+          <h2 id="endTitle">You escaped.</h2>
+          <p id="endText">The monster was only lonely.</p>
+          <button id="restartBtn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
